@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>R&s Hortaliças</title>
+</head>
+<body>
+    <header>
+        <div id="header-content" style="justify-content: center;">
+            <div id="logo" style="margin: 0 auto;">
+                <h1>R&S Hortaliças</h1>
+                <span class="header-frase">Produtos orgânicos frescos direto do campo para sua mesa!</span>
+            </div>
+        </div>
+    </header>
+    <!-- Carrossel de propagandas -->
+    <section id="ads-carousel">
+        <button class="carousel-btn left" onclick="moveCarousel(-1)"><i class="bi bi-chevron-left"></i></button>
+        <div class="carousel-track" id="carousel-track">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Promoção 1">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Promoção 2">
+            <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=800&q=80" alt="Promoção 3">
+        </div>
+        <button class="carousel-btn right" onclick="moveCarousel(1)"><i class="bi bi-chevron-right"></i></button>
+    </section>
+    <!-- Grade de produtos -->
+    <section id="products-section">
+        <div class="category-row">
+            <div class="category-title">Hortaliças</div>
+            <div class="products-carousel">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=400&q=80" alt="Alface">
+                    <div class="product-name">Alface Orgânica</div>
+                    <div class="product-price">R$ 4,99</div>
+                    <button>Adicionar</button>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Cenoura">
+                    <div class="product-name">Cenoura Orgânica</div>
+                    <div class="product-price">R$ 3,49</div>
+                    <button>Adicionar</button>
+                </div>
+                <!-- Adicione mais produtos aqui -->
+            </div>
+        </div>
+        <div class="category-row">
+            <div class="category-title">Frutas</div>
+            <div class="products-carousel">
+                <div class="product-card">
+                    <img src="imagens/banana-prata.bin" alt="banana-prata">
+                    <div class="product-name">Banana Prata Organica 650g</div>
+                    <div class="product-bottom">
+                        <div class="product-price">R$ 11,00</div>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imagens/banana-nanica.bin" alt="Banana-nanica">
+                    <div class="product-name">Banana Nanica Orgânica</div>
+                    <div class="product-bottom">
+                        <div class="product-price">R$ 5,49</div>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imagens/limao-taiti.bin" alt="Limão Taiti">
+                    <div class="product-name">Limão taiti Orgânico 1kg</div>
+                    <div class="product-bottom">
+                        <div class="product-price">R$ 5,49</div>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imagens/maca-gala.bin" alt="maça-gala">
+                    <div class="product-name">Maça Gala 500g</div>
+                    <div class="product-bottom">
+                        <div class="product-price">R$ 5,49</div>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="imagens/manga-palmer.bin" alt="Manga Palmer">
+                    <div class="product-name">Manga Palmer 500g</div>
+                    <div class="product-bottom">
+                        <div class="product-price">R$ 5,49</div>
+                        <button>Adicionar</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Adicione mais categorias e produtos conforme necessário -->
+    </section>
+    <script>     
+    let currentIndex = 0;
+    const track = document.getElementById('carousel-track');
+    const images = track ? track.querySelectorAll('img') : [];
+    function moveCarousel(dir) {
+        if (!images.length) return;
+        currentIndex += dir;
+        if (currentIndex < 0) currentIndex = images.length - 1;
+        if (currentIndex >= images.length) currentIndex = 0;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    </script>
+</body>
+</html>
